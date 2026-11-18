@@ -1,0 +1,211 @@
+/* fuente */
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+/* variables nomarles */
+:root {
+    /* Colores */
+    --color-fondo:    #11111b;
+    --color-fondo-2:  #1e1e2e;
+    --color-fuente:   #cdd6f4;
+    --color-fuente-2: #1e1e2e;
+    --color-acento:   #f38ba8;
+    --color-acento-2: #EB4272;
+    --color-sombra:   rgba(30, 30, 46, 0.5);
+    --color-sombra-2: rgba(239, 241, 245, 0.5);
+    --color-verde:    #a6e3a1;
+    --tam-fuente:     10px;
+}
+
+@media (prefers-color-scheme: light) {
+    :root {
+        /* Colores */
+        --color-fondo:    #dce0e8;
+        --color-fondo-2:  #eff1f5;
+        --color-fuente:   #4c4f69;
+        --color-fuente-2: #eff1f5;
+        --color-acento:   #d20f39;
+        --color-acento-2: #6E081E;
+        --color-sombra:   rgba(239, 241, 245, 0.5);
+        --color-sombra-2: rgba(30, 30, 46, 0.5);
+        --color-verde:    #40a02b;
+    }
+}
+
+@media (width <= 800px) {
+    :root {
+        --tam-fuente: 7px;
+    }
+}
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    font-family: Inter, Arial, SansSerif;
+    font-size: var(--tam-fuente);
+    background-color: var(--color-fondo);
+    color: var(--color-fuente);
+}
+
+body {
+    display: grid;
+    grid-template-rows: auto auto auto;
+    width: 100vw;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--color-fondo-2);
+    min-height: 4rem;
+    max-height: 6rem;
+    padding: 0 2rem;
+}
+
+header h1 {
+    font-size: 2rem;
+}
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--color-fondo-2);
+    min-height: 4rem;
+    max-height: 6rem;
+    padding: 0 1.5rem;
+    font-size: 1.5rem;
+
+    p {
+        display: flex;
+        gap: .5rem;
+    }
+
+    a {
+        display: block;
+        text-decoration: none;
+        font-size: 1.5rem;
+        color: var(--color-fuente);
+        background-color: transparent;
+        padding: 0;
+        border-radius: 0;
+        transition: ease-in-out .5s;
+    }
+
+    a:hover {
+        text-decoration: underline;
+        color: var(--color-acento);
+        background-color: transparent;
+        font-weight: normal;
+    }
+
+}
+
+.titulo {
+    font-size: 2.25rem;
+    color: var(--color-acento);
+    text-shadow: 0rem 0rem 2rem var(--color-acento);
+    font-weight: bold;
+}
+
+.subtitulo {
+    font-size: 2rem;
+    text-shadow: 0rem 0rem 2rem var(--color-fuente);
+}
+
+main {
+    display: grid;
+    grid-template-columns: 20vw 80vw;
+    min-height: calc(100vh - 8rem);
+}
+
+#links {
+    margin: 1.5rem 1rem 1.5rem 2rem;
+}
+
+#links > div {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--color-fondo-2);
+    padding: 2rem;
+    border-radius: 1rem;
+    gap: 1.5rem;
+}
+
+a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    font-size: 2rem;
+    color: var(--color-fuente);
+    background-color: var(--color-fondo);
+    padding: 1rem 2rem;
+    border-radius: 1rem;
+    transition: ease-in-out .5s;
+}
+
+#webActual {
+    color: var(--color-fondo);
+    background-color: var(--color-acento);
+    transition: ease-in-out .5s;
+}
+
+a:hover, #webActual:hover {
+    color: var(--color-fondo);
+    background-color: var(--color-acento-2);
+    font-weight: bold;
+}
+
+#contenido {
+    margin: 1.5rem 2rem 1.5rem 1rem;
+}
+
+@media (width <= 1050px) {
+
+    main {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto;
+        min-height: calc(100vh - 8rem);
+        align-content: start;
+    }
+
+    #links {
+        margin: 1.5rem 2rem .75rem 2rem;
+        min-width: auto;
+    }
+
+    #links > div {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+
+    #links > div > a {
+        width: calc(100% / 3 - 5rem);
+    }
+
+    #contenido {
+        margin: .75rem 2rem 1.5rem 2rem;
+    }
+
+}
+
+.tarjeta {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.5rem;
+    gap: 1rem;
+    background-color: var(--color-fondo-2);
+    font-size: 1.75rem;
+    padding: 2rem;
+    border-radius: 1rem;
+}
+
+.tarjeta:last-child {
+    margin-bottom: 0;
+}

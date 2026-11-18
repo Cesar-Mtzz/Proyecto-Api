@@ -1,0 +1,44 @@
+#pilotos, #escuderias {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.piloto {
+    display: flex;
+    flex-direction: column;
+    min-width: calc(100% / 4 - 3.8rem);
+    max-width: calc(100% / 4 - 3.8rem);
+    padding: 1rem;
+    border: .1rem solid var(--color-fuente);
+    border-radius: 1rem;
+    gap: 1rem;
+    background-color: var(--color-fondo);
+    transition: ease-in-out .5s;
+}
+
+.pilotoTxt {
+    font-size: 1.5rem;
+}
+
+@media (width < 1300px) {
+    .piloto {
+        min-width: calc(100% / 3 - 3.6rem);
+        max-width: calc(100% / 3 - 3.6rem);
+    }
+}
+
+@media (width < 1000px) {
+    .piloto {
+        min-width: calc(100% / 2 - 3.4rem);
+        max-width: calc(100% / 2 - 3.4rem);
+    }
+}
+
+@media (width < 400px) {
+    .piloto {
+        min-width: calc(100% - 2.2rem);
+        max-width: calc(100% - 2.2rem);
+    }
+}

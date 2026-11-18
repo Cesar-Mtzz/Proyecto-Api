@@ -1,0 +1,76 @@
+#calendario {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+#advertenciaCalendario {
+    display: none;
+}
+
+.ronda {
+    display: flex;
+    flex-direction: column;
+    min-width: calc(100% / 4 - 3.8rem);
+    max-width: calc(100% / 4 - 3.8rem);
+    padding: 1rem;
+    border-radius: 1rem;
+    gap: 1rem;
+    background-color: var(--color-fondo);
+    transition: ease-in-out .5s;
+}
+
+.rondaTxt {
+    font-size: 1.5rem;
+}
+
+.ronda > .rondaTxt:last-child {
+    margin-top: 2rem;
+}
+
+.completada {
+    border: .1rem solid var(--color-verde);
+}
+
+.actual {
+    font-weight: bold;
+    border: .1rem solid var(--color-fuente);
+}
+
+.proxima {
+    border: .1rem solid var(--color-acento);
+}
+
+@media (width < 1300px) {
+    .ronda {
+        min-width: calc(100% / 3 - 3.6rem);
+        max-width: calc(100% / 3 - 3.6rem);
+    }
+}
+
+@media (width < 1000px) {
+    .ronda {
+        min-width: calc(100% / 2 - 3.4rem);
+        max-width: calc(100% / 2 - 3.4rem);
+    }
+
+    .completada {
+        display: none;
+    }
+
+    .completada:has(+ .actual) {
+        display: flex;
+    }
+
+    #advertenciaCalendario {
+        display: block;
+    }
+}
+
+@media (width < 400px) {
+    .ronda {
+        min-width: calc(100% - 2.2rem);
+        max-width: calc(100% - 2.2rem);
+    }
+}

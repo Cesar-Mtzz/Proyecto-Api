@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="author" content="">
+        <meta name="description" content="">
+        <meta name="viewport" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" href="../icons/f1.svg" type="image/svg">
+        <title>F1 Dashboard</title>
+        <link rel = "stylesheet" href="../css/style.css">
+        <link rel = "stylesheet" href="../css/pilotos.css">
+        <script src="../js/f1Api.js"></script>
+        <script src="../js/paginas/pilotos.js"></script>
+    </head>
+    <body>
+        
+        <header>
+            <h1 class="titulo">F1 Dahsboard</h1>
+            <h1 class="subtitulo">Pilotos y Escuderias</h1>
+        </header>
+
+        <main>
+            <nav id="links">
+                <div>
+                    <a href="../index.html">Inicio</a>
+                    <a href="./calendario.html">Calendario</a>
+                    <a href="./pilotos.html" id="webActual">Pilotos y Escuderias</a>
+                    <a href="./clasificaciones.html">Clasificación</a>
+                </div>
+            </nav>
+
+            <div id="contenido">
+                <div class="tarjeta">
+                    <p class="titulo">Escuderias</p>
+                    <div id="escuderias">
+                    </div>
+                </div>
+
+                <div class="tarjeta">
+                    <p class="titulo">Pilotos</p>
+                    <div id="pilotos">
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+        </footer>
+
+    </body>
+</html>

@@ -1,0 +1,35 @@
+#conPuntos, #constructoresConPuntos {
+    padding: 0 1.5rem .5rem;
+}
+
+#sinPuntos, #constructoresSinPuntos {
+    background-color: var(--color-fondo);
+    padding: 1.5rem;
+    border-top: .25rem solid var(--color-acento-2);
+    border-radius: 0 0 1rem 1rem;
+}
+
+#sinPuntos > .pilotos p, #constructoresSinPuntos > .pilotos p {
+    color: var(--color-acento-2);
+}
+
+.pilotos {
+    display: grid;
+    grid-template-columns: 1fr 2.5fr 2.5fr 1fr;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+
+.pilotos:first-child p {
+    font-size: 1.75rem;
+    font-weight: bold;
+}
+
+#sinPuntos > .pilotos:first-child p {
+    font-weight: normal;
+}
+
+#sinPuntos > .pilotos:last-child {
+    margin-bottom: 0;
+}
+
