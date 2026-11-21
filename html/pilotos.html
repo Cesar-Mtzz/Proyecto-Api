@@ -17,13 +17,14 @@
         
         <header>
             <h1 class="titulo">F1 Dahsboard</h1>
-            <h1 class="subtitulo">Pilotos y Escuderias</h1>
+            <p id="showName">Hola</p>
+            <button onclick="cerrarSesion()">Cerrar Sesion</button>
         </header>
 
         <main>
             <nav id="links">
                 <div>
-                    <a href="../index.html">Inicio</a>
+                    <a href="./home.html">Inicio</a>
                     <a href="./calendario.html">Calendario</a>
                     <a href="./pilotos.html" id="webActual">Pilotos y Escuderias</a>
                     <a href="./clasificaciones.html">Clasificación</a>
@@ -53,6 +54,17 @@
                 Api: <a href="https://api.jolpi.ca/docs/">jolpica-f1 API</a>
             </p>
         </footer>
+
+        <script>
+            function mostrarNombre() {
+                const session = JSON.parse(sessionStorage.getItem("sesionActiva"));
+
+                if (session) {
+                    document.getElementById("showName").textContent = "Hola, " + session.nombre;
+                }
+            }
+            mostrarNombre();
+        </script>
 
     </body>
 </html>

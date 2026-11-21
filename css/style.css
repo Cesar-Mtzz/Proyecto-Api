@@ -63,6 +63,26 @@ header {
     min-height: 4rem;
     max-height: 6rem;
     padding: 0 2rem;
+
+    #showName {
+        font-size: 1.75rem;
+    }
+
+    button {
+        font-size: 2rem;
+        color: var(--color-fuente);
+        background-color: transparent;
+        padding: .25rem 1rem;
+        border-radius: 1rem;
+        border: none;
+        transition: ease-in-out .5s;
+        cursor: pointer;
+    }
+
+    button:hover {
+        color: var(--color-acento);
+        font-weight: bold;
+    }
 }
 
 header h1 {

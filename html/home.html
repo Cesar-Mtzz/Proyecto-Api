@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="author" content="">
+        <meta name="description" content="">
+        <meta name="viewport" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" href="../icons/f1.svg" type="image/svg">
+        <title>F1 Dashboard</title>
+        <link rel = "stylesheet" href="../css/style.css">
+        <link rel = "stylesheet" href="../css/home.css">
+        <script src="../js/f1Api.js"></script>
+        <script src="../js/paginas/home.js"></script>
+    </head>
+    <body>
+        
+        <header>
+            <h1 class="titulo">F1 Dahsboard</h1>
+            <p id="showName">Hola</p>
+            <button onclick="cerrarSesion()">Cerrar Sesion</button>
+        </header>
+
+        <main>
+            <nav id="links">
+                <div>
+                    <a href="./home.html" id="webActual">Inicio</a>
+                    <a href="../html/calendario.html">Calendario</a>
+                    <a href="../html/pilotos.html">Pilotos y Escuderias</a>
+                    <a href="../html/clasificaciones.html">Clasificación</a>
+                </div>
+            </nav>
+
+            <div id="contenido">
+                <div class="tarjeta">
+                    <p class="titulo">Información de la temporada</p>
+                    <div id="calendario">
+                        <div>
+                            <p class="subtitulo">Temporada:</p>
+                            <p id="temporada">Cargando...</p>
+                        </div>
+                        <div>
+                            <p class="subtitulo">Próxima carrera:</p>
+                            <p id="premioTitulo">Cargando...</p>
+                            <p id="circuitoConFecha"></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tarjeta">
+                    <p id="resultadosUltimaCarrera" class="titulo">Ultimos Resultados:</p>
+                    <div id="posiciones">
+                        <div id="conPuntos">
+                            <div class="pilotos">
+                                <p>Posicion - Piloto</p>
+                                <p>Puntos</p>
+                            </div>
+                        </div>
+                        <div id="sinPuntos">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>
+                Autor:  <a href="https://github.com/Cesar-Mtzz/">Cesar Martinez</a>
+            </p>
+            <p>
+                Api: <a href="https://api.jolpi.ca/docs/">jolpica-f1 API</a>
+            </p>
+        </footer>
+
+        <script>
+            function mostrarNombre() {
+                const session = JSON.parse(sessionStorage.getItem("sesionActiva"));
+
+                if (session) {
+                    document.getElementById("showName").textContent = "Hola, " + session.nombre;
+                }
+            }
+            mostrarNombre();
+        </script>
+
+    </body>
+</html>
