@@ -11,15 +11,26 @@
         <link rel = "stylesheet" href="../css/style.css">
         <link rel = "stylesheet" href="../css/pilotos.css">
         <script src="../js/f1Api.js"></script>
+        <script src="../js/general.js"></script>
         <script src="../js/paginas/pilotos.js"></script>
     </head>
     <body>
-        
         <header>
             <h1 class="titulo">F1 Dahsboard</h1>
             <p id="showName">Hola</p>
-            <button onclick="cerrarSesion()">Cerrar Sesion</button>
+            <button onclick="mostrarAjustes()" id="btnAjustes">Menu</button>
         </header>
+
+        <div id="menuFlotante">
+            <div id="contenidoMenuFlotante">
+                <div id="tituloMenuFlotante">
+                    <h2 class="titulo">Ajustes</h2>
+                </div>
+                <button onclick="cerrarSesion()">Cerrar Sesion</button>
+                <button id="botonContenido" onclick="toggleContenidoExtra()">Activar / Desactivar contenido completo</button>
+                <button onclick="mostrarAjustes()">Cerrar Menu</button>
+            </div>
+        </div>
 
         <main>
             <nav id="links">
@@ -54,22 +65,5 @@
                 Api: <a href="https://api.jolpi.ca/docs/">jolpica-f1 API</a>
             </p>
         </footer>
-
-        <script>
-            function cerrarSesion() {
-                sessionStorage.removeItem("sesionActiva");
-                window.location.href = "../index.html";
-            }
-
-            function mostrarNombre() {
-                const session = JSON.parse(sessionStorage.getItem("sesionActiva"));
-
-                if (session) {
-                    document.getElementById("showName").textContent = "Hola, " + session.nombre;
-                }
-            }
-            mostrarNombre();
-        </script>
-
     </body>
 </html>

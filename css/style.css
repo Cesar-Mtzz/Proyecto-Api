@@ -56,37 +56,39 @@ body {
 }
 
 header {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     align-items: center;
     background-color: var(--color-fondo-2);
     min-height: 4rem;
     max-height: 6rem;
     padding: 0 2rem;
 
+    h1 {
+        font-size: 2rem;
+        justify-self: start;
+        margin: 0;
+        padding: 0 2rem;
+    }
+
     #showName {
         font-size: 1.75rem;
+        justify-self: center;
+        margin: 0;
+        padding: 0 2rem;
     }
 
     button {
         font-size: 2rem;
         color: var(--color-fuente);
         background-color: transparent;
-        padding: .25rem 1rem;
+        padding: .25rem 2rem;
         border-radius: 1rem;
         border: none;
         transition: ease-in-out .5s;
         cursor: pointer;
+        justify-self: end;
     }
-
-    button:hover {
-        color: var(--color-acento);
-        font-weight: bold;
-    }
-}
-
-header h1 {
-    font-size: 2rem;
 }
 
 footer {
@@ -167,16 +169,32 @@ a {
     transition: ease-in-out .5s;
 }
 
+a:hover, #webActual:hover {
+    color: var(--color-fondo);
+    background-color: var(--color-acento-2);
+    font-weight: bold;
+}
+
 #webActual {
     color: var(--color-fondo);
     background-color: var(--color-acento);
     transition: ease-in-out .5s;
 }
 
-a:hover, #webActual:hover {
-    color: var(--color-fondo);
+button {
+    font-size: 2rem;
+    color: var(--color-fuente-2);
+    background-color: var(--color-acento);
+    padding: 1rem 2rem;
+    border-radius: 1rem;
+    border: none;
+    transition: ease-in-out .5s;
+    cursor: pointer;
+}
+
+button:hover {
+    color: var(--color-fuente-2);
     background-color: var(--color-acento-2);
-    font-weight: bold;
 }
 
 #contenido {
@@ -228,4 +246,87 @@ a:hover, #webActual:hover {
 
 .tarjeta:last-child {
     margin-bottom: 0;
+}
+
+#menuFlotante {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, .6);
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+    opacity: 0;
+    visibility: hidden;
+    transition: ease-in-out .5s;
+    z-index: 1000;
+}
+
+#menuFlotante.activo {
+    opacity: 1;
+    visibility: visible;
+}
+
+#contenidoMenuFlotante {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    gap: 2rem;
+    background-color: var(--color-fondo-2);
+    padding: 2rem;
+    border-radius: 1rem;
+    transform: scale(.9);
+    min-width: 35rem;
+    min-height: 35rem;
+    transition: ease-in-out .5s;
+
+    button {
+        font-size: 2rem;
+        color: var(--color-fuente);
+        background-color: var(--color-fondo);
+        padding: 1rem 2rem;
+        border-radius: 1rem;
+        border: none;
+        transition: ease-in-out .5s;
+    }
+
+    button:hover {
+        color: var(--color-fuente-2);
+        background-color: var(--color-acento);
+    }
+
+    button:last-child {
+        font-size: 2rem;
+        color: var(--color-fuente-2);
+        background-color: var(--color-acento);
+        padding: 1rem 2rem;
+        border-radius: 1rem;
+        border: none;
+        transition: ease-in-out .5s;
+    }
+
+    button:last-child:hover {
+        color: var(--color-fuente-2);
+        background-color: var(--color-acento-2);
+    }
+
+}
+
+#contenidoMenuFlotante * {
+    width: 100%;
+}
+
+#tituloMenuFlotante {
+    display: flex;
+    align-items:center;
+    justify-content:center;
+}
+
+#tituloMenuFlotante h2{
+    text-align: center;
+    font-size: 3rem;
+}
+
+#menuFlotante.activo #contenidoMenuFlotante {
+    transform: scale(1);
 }

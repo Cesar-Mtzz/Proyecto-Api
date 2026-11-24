@@ -33,6 +33,67 @@ body {
         background-color: transparent;
         font-weight: normal;
     }
+
+    #inCheckbox {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1.5rem;
+        background-color: var(--color-fondo);
+        padding: 1rem 1.5rem;
+        border-radius: 1rem;
+        cursor: pointer;
+    }
+
+    #inCheckbox label {
+        cursor: pointer;
+        flex: 1;
+    }
+
+    #inputCheck {
+        appearance: none;
+        -webkit-appearance: none;
+        position: relative;
+        flex-shrink: 0;
+        width: 4.8rem;
+        height: 2.6rem;
+        margin: 0;
+        padding: 0;
+        border-radius: 999px;
+        background-color: var(--color-fondo-2);
+        border: .15rem solid var(--color-sombra-2);
+        cursor: pointer;
+        transition: background-color 0.25s ease, border-color 0.25s ease;
+    }
+
+    #inputCheck::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 0.3rem;
+        transform: translateY(-50%);
+        width: 1.8rem;
+        height: 1.8rem;
+        border-radius: 50%;
+        background-color: var(--color-fuente);
+        transition: transform 0.25s ease, background-color 0.25s ease;
+    }
+
+    #inputCheck:checked {
+        background-color: var(--color-acento);
+        border-color: var(--color-acento);
+    }
+
+    #inputCheck:checked::before {
+        transform: translate(2.2rem, -50%);
+        background-color: var(--color-fondo);
+    }
+
+    #inputCheck:focus-visible {
+        outline: .2rem solid var(--color-acento);
+        outline-offset: .2rem;
+    }
 }
 
 #form h1 {
@@ -103,4 +164,15 @@ button:hover {
 
 #form p:last-child {
     text-align: center;
+}
+
+/* Autollenado de los cuadros */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:autofill {
+    -webkit-text-fill-color: var(--color-fuente);
+    -webkit-box-shadow: 0 0 0 1000px var(--color-fondo) inset;
+    box-shadow: 0 0 0 1000px var(--color-fondo) inset;
+    transition: background-color 5000s ease-in-out 0s;
 }

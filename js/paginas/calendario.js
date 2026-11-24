@@ -4,7 +4,6 @@ async function cargarCalendario() {
         const contenedor = document.getElementById("calendario");
 
         const hoy = new Date();
-        hoy.setHours(0, 0, 0, 0);
 
         // Obtener el día de la semana (domingo = 0, lunes = 1...)
         const dia = hoy.getDay();
@@ -12,12 +11,12 @@ async function cargarCalendario() {
         // Calcular el lunes
         const lunes = new Date(hoy);
         lunes.setDate(hoy.getDate() - (dia === 0 ? 6 : dia - 1));
-            lunes.setHours(0, 0, 0, 0);
+            lunes;
 
         // Calcular el domingo
         const domingo = new Date(lunes);
         domingo.setDate(lunes.getDate() + 6);
-            domingo.setHours(0, 0, 0, 0);
+            domingo;
 
         carreras.forEach(carrera => {
             const fecha = new Date(`${carrera.date}T00:00:00`);

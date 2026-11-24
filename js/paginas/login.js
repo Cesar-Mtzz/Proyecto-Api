@@ -1,9 +1,10 @@
 class User {
-    constructor(nombre, apellido, usuario, contraseña) {
+    constructor(nombre, apellido, usuario, contraseña, mostrarTodo) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.usuario = usuario;
         this.contraseña = contraseña;
+        this.mostrarTodo = mostrarTodo;
     }
 }
 
@@ -14,8 +15,9 @@ function crearUsuario(e) {
     const inLastname = document.getElementById("inputLastname").value.trim();
     const inUser = document.getElementById("inputUser").value.trim();
     const inPass = document.getElementById("inputPass").value.trim();
+    const inTipo = document.getElementById("inputCheck").checked;
 
-    const user = new User(inName, inLastname, inUser, inPass);
+    const user = new User(inName, inLastname, inUser, inPass, inTipo);
 
     localStorage.setItem("registrado", JSON.stringify(user));
 
@@ -35,7 +37,11 @@ function iniciarSesion(e) {
 
         sessionStorage.setItem("sesionActiva", JSON.stringify(userFound));
 
-        window.location.href = "./html/home.html";
+        if (userFound.mostrarTodo) {
+            window.location.href = "./html/lessInfo.html";
+        } else {
+            window.location.href = "./html/home.html"
+        }
 
     } else {
         document.getElementById("errorMsg").classList.add("mostrarError");
@@ -46,11 +52,10 @@ function saltarLoginSiAutenticado() {
     const session = JSON.parse(sessionStorage.getItem("sesionActiva"));
 
     if (session) {
-        window.location.href = "./html/home.html";
+        if (session.mostrarTodo) {
+            window.location.href = "./html/lessInfo.html";
+        } else {
+            window.location.href = "./html/home.html";
+        }
     }
-}
-
-function cerrarSesion() {
-    sessionStorage.removeItem("sesionActiva");
-    window.location.href = "../index.html";
 }

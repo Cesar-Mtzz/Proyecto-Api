@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="author" content="">
+        <meta name="description" content="">
+        <meta name="viewport" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" href="../icons/f1.svg" type="image/svg">
+        <title>F1 Dashboard</title>
+        <link rel = "stylesheet" href="../css/style.css">
+        <link rel = "stylesheet" href="../css/lessInfo.css">
+        <script src="../js/f1Api.js"></script>
+        <script src="../js/paginas/lessInfo.js"></script>
+        <script src="../js/general.js"></script>
+    </head>
+    <body>
+        <header>
+            <h1 class="titulo">F1 Dahsboard</h1>
+            <p id="showName">Hola</p>
+            <button onclick="mostrarAjustes()" id="btnAjustes">Menu</button>
+        </header>
+
+        <div id="menuFlotante">
+            <div id="contenidoMenuFlotante">
+                <div id="tituloMenuFlotante">
+                    <h2 class="titulo">Ajustes</h2>
+                </div>
+                <button onclick="cerrarSesion()">Cerrar Sesion</button>
+                <button id="botonContenido" onclick="toggleContenidoExtra()">Activar / Desactivar contenido completo</button>
+                <button onclick="mostrarAjustes()">Cerrar Menu</button>
+            </div>
+        </div>
+
+        <main>
+            <div id="contenido">
+                <div class="tarjeta">
+                    <p class="titulo">Información de la temporada</p>
+                    <div id="calendario">
+                        <div>
+                            <p class="subtitulo">Temporada:</p>
+                            <p id="temporada">Cargando...</p>
+                        </div>
+                        <div>
+                            <p class="subtitulo">Próxima carrera:</p>
+                            <p id="premioTitulo">Cargando...</p>
+                            <p id="circuitoConFecha"></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tarjeta">
+                    <p id="resultadosUltimaCarrera" class="titulo">Ultimos Resultados:</p>
+                    <div id="posiciones">
+                        <div id="conPuntos">
+                            <div class="pilotos">
+                                <p>Posicion - Piloto</p>
+                                <p>Puntos</p>
+                            </div>
+                        </div>
+                        <div id="sinPuntos">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="contenido">
+                <div class="tarjeta">
+                    <p class="titulo">Calendario</p>
+                    <p id="advertenciaCalendario"> <i> - Para ver el calendario visite la web en una computadora </i> </p>
+                    <div id="calendario2">
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>
+                Autor:  <a href="https://github.com/Cesar-Mtzz/">Cesar Martinez</a>
+            </p>
+            <p>
+                Api: <a href="https://api.jolpi.ca/docs/">jolpica-f1 API</a>
+            </p>
+        </footer>
+    </body>
+</html>
